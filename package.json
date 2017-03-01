@@ -4,7 +4,7 @@
   "main": "app/index.js",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon app/index.js --exec babel-node --presets es2015",
+    "dev": "nodemon app/index.js --exec babel-node --presets es2015",
     "test": "jest"
   },
   "devDependencies": {
