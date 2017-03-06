@@ -62,4 +62,5 @@ typings/
 .env
 
 
+.tern-port
 # End of https://www.gitignore.io/api/node
