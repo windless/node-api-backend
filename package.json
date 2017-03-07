@@ -4,7 +4,7 @@
   "main": "app/index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon app/index.js --exec babel-node",
+    "dev": "nodemon app/index.js --exec babel-node | ./node_modules/.bin/bunyan",
     "test": "jest --watch"
   },
   "devDependencies": {
@@ -19,6 +19,7 @@
     "regenerator-runtime": "^0.10.3"
   },
   "dependencies": {
+    "bunyan": "^1.8.8",
     "express": "^4.14.1",
     "express-graphql": "^0.6.3",
     "graphql": "^0.9.1",
