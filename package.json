@@ -1,13 +1,16 @@
 {
   "name": "node-api-backend",
   "version": "0.0.1",
-  "main": "app/index.js",
+  "main": "app/index.ts",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon app/index.js --exec babel-node | ./node_modules/.bin/bunyan",
+    "start": "npm run build:live",
+    "build:live": "nodemon --exec ./node_modules/.bin/ts-node -- ./app/index.ts | ./node_modules/.bin/bunyan",
     "test": "jest --watch"
   },
   "devDependencies": {
+    "@types/jest": "^18.1.1",
+    "@types/node": "^7.0.5",
     "babel-cli": "^6.23.0",
     "babel-jest": "^19.0.0",
     "babel-preset-es2015": "^6.22.0",
@@ -16,13 +19,28 @@
     "eslint": "^3.16.1",
     "jest": "^19.0.2",
     "nodemon": "^1.11.0",
-    "regenerator-runtime": "^0.10.3"
+    "regenerator-runtime": "^0.10.3",
+    "ts-jest": "^19.0.0",
+    "typescript": "^2.2.1"
   },
   "dependencies": {
     "bunyan": "^1.8.8",
     "express": "^4.14.1",
     "express-graphql": "^0.6.3",
     "graphql": "^0.9.1",
-    "mongoose": "^4.8.5"
+    "mongoose": "^4.8.5",
+    "ts-node": "^2.1.0"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testMatch": [
+      "**/__tests__/*.(ts|tsx|js)"
+    ]
   }
 }

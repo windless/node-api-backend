@@ -1,5 +1,5 @@
-import express from 'express'
-import bunyan from 'bunyan'
+import * as bunyan from 'bunyan'
+import * as express from 'express'
 
 const log = bunyan.createLogger({name: 'app'})
 
